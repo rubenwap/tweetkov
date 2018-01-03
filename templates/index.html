@@ -18,10 +18,15 @@
             <a href="https://en.wikipedia.org/wiki/Markov_chain" target="_blank">Markov chain</a> based tweet using the original TL as learning corpus. The first time retrieving the TL might
             take a few seconds. </div>
         <div id="search">
-
-            <input type="text" name="handle" id="handle" placeholder="Type a Twitter handle...">
-            <button id="generate">Generate!</button>
-
+            <form>
+                <fieldset>
+                    <span id="at">@</span>
+                    <span id="handleTextArea">
+                        <input type="text" name="handle" id="handle" placeholder="Type a Twitter handle...">
+                    </span>
+                    <button type="submit" id="generate">Generate!</button>
+                </fieldset>
+            </form>
         </div>
         <div id="tweetkov" style="display:none;">
             <div id="from"></div>

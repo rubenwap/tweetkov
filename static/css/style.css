@@ -4,3 +4,15 @@
 #search, #tweetkov, #share {
     margin-top:1em;
 }
+
+#at {
+    font-size: 2em;
+    width:10%;
+    color: #9b4dca;
+}
+
+#handle {
+    width:80%;
+    
+
+}

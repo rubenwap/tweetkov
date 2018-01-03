@@ -24,5 +24,6 @@ let tweetkovify = (user) => {
 };
 
 document.querySelector("#generate").addEventListener("click", function () {
+    event.preventDefault();
     tweetkovify(document.querySelector("#handle").value);
 })

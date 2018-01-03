@@ -12,8 +12,8 @@ def cleanup_text(text):
 
 def download_tweets(handle):
 
-    if sql.read_tl(handle) is not None:
-        return(sql.read_tl(handle)[2])
+    if sql.read_tl(handle.lower()) is not None:
+        return(sql.read_tl(handle.lower())[2])
     else:
     #load vars for twitter api
         APP_ROOT = os.path.join(os.path.dirname(__file__), '..')
