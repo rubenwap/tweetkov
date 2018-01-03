@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tweetkov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+    <div class="container">
+        <div id="description">Tweetkov takes your chosen Twitter user, and builds a
+            <a href="https://en.wikipedia.org/wiki/Markov_chain" target="_blank">Markov chain</a> based tweet using the original TL as learning corpus. The first time retrieving the TL might
+            take a few seconds. </div>
+        <div id="search">
+
+            <input type="text" name="handle" id="handle" placeholder="Type a Twitter handle...">
+            <button id="generate">Generate!</button>
+
+        </div>
+        <div id="tweetkov" style="display:none;">
+            <div id="from"></div>
+            <div id="tweet"></div>
+            <div id="share">
+                <a class="twitter-share-button" id="shareButton" href="" data-size="large" target="_blank">
+                    Tweet this
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</html>
