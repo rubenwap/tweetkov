@@ -12,13 +12,13 @@ conn = psycopg2.connect("dbname={dbname} user={user} host={host} port={port} pas
 def read_tl(handle):
     cur = conn.cursor()
     cur.execute(
-        "SELECT key, handle, tl FROM ruben.tweetkov.full_tl WHERE handle = '{}';".format(handle.lower()))
+        "SELECT key, handle, tl FROM tweetkov.full_tl WHERE handle = '{}';".format(handle.lower()))
     return cur.fetchone()
 
 
 def write_tl(handle, tl):
     cur = conn.cursor()
     cur.execute(
-        "INSERT INTO ruben.tweetkov.full_tl (handle, tl) VALUES (%s,%s)", (handle.lower(), tl))
+        "INSERT INTO tweetkov.full_tl (handle, tl) VALUES (%s,%s)", (handle.lower(), tl))
     conn.commit()
     return read_tl(handle)
