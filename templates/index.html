@@ -2,6 +2,15 @@
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112009995-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-112009995-1');
+    </script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tweetkov</title>
@@ -55,8 +64,14 @@
             </div>
 
         </div>
-
+        <footer>
+            <div id="disclaimer">
+                <em>Disclaimer: </em>This is not a real Tweet from the selected Twitter user. It has been automatically generated
+                using the original Timeline plus an algorithm of probability. Any similarity with a real tweet is purely
+                a coincidence.</div>
     </div>
+    </footer>
+
 </body>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 

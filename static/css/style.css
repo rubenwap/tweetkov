@@ -362,3 +362,9 @@
 		-moz-transform: rotate(900deg);
 	}
 }
+
+#disclaimer {
+    position: fixed; 
+    bottom: 0;
+    width: 60%;
+}
