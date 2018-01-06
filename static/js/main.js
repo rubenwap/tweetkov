@@ -12,8 +12,8 @@ let displayTweet = (data) => {
     } else {
         document.querySelector("#from").innerHTML = `<h2>Markovified <a href="https://twitter.com/${data.user}" target="_blank">@${data.user}</a>:</h2>`;
         document.querySelector("#tweet").innerHTML = `<h1>${data.tweetkov}</h1>`;
-        document.querySelector("#shareButton").href = `https://twitter.com/intent/tweet?text=${data.tweetkov}&hashtags=tweetkov&url=http://www.tweetkov.com`
-        document.querySelector("#spinner").style.display = "none";
+        document.querySelector("#shareButton").href = `https://twitter.com/intent/tweet?text=${data.tweetkov}&hashtags=tweetkov&url=${window.location}`
+        document.querySelector(".spinner").style.display = "none";
 
     }
 
@@ -21,12 +21,13 @@ let displayTweet = (data) => {
 
 let tweetkovify = (user) => {
     fetchAsync(`../user/${user}`)
-        .then(data => displayTweet(data))
+        .then(data => displayTweet(data)).catch(response => console.log(response))
 };
 
 document.querySelector("#generate").addEventListener("click", function () {
-    document.querySelector("#tweetkov").style.display = "none";
-    document.querySelector("#spinner").style.display = "block";
     event.preventDefault();
+    ga('send', 'event', 'Click', 'Generate', 'Generate Tweetkovs');
+    document.querySelector("#tweetkov").style.display = "none";
+    document.querySelector(".spinner").style.display = "block";
     tweetkovify(document.querySelector("#handle").value);
 })
