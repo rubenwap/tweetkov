@@ -39,5 +39,6 @@
 #disclaimer {
     position: fixed; 
     bottom: 0;
-    width: 60%;
+    width: 80%;
+    font-size: small;
 }
