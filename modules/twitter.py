@@ -41,7 +41,8 @@ def download_tweets(handle):
                 if tweet[0:2] != "RT":
                     text = text + \
                         re.sub(
-                            'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', '', tweet) + "\n"
+                            'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+|\x00', '', tweet) + "."
+            
             sql.write_tl(handle, text)
             return text
         except(TwitterSearchException):

@@ -37,8 +37,8 @@
 }
 
 #disclaimer {
-    position: fixed; 
+    position: relative; 
     bottom: 0;
     width: 80%;
-    font-size: small;
+    font-size: x-small;
 }
